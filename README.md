@@ -4,3 +4,6 @@
 # PPA 
 - I have used *test* PPA from *ppa:ubuntu-toolchain-r/test*
 - One can also use *ppa:ubuntu-toolchain-r/ppa*
+
+# To install as system emacs 
+sudo make install-strip
