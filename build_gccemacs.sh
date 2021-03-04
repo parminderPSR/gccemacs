@@ -21,7 +21,7 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 10
             --with-threads --with-included-regex --with-zlib --with-cairo --without-rsvg\
             --without-sound --without-imagemagick  --without-toolkit-scroll-bars \
             --without-gpm --without-dbus --without-makeinfo --without-pop \
-            --without-mailutils --without-gsettings --with-nativecomp --prefix=$HOME/.local
+            --without-mailutils --without-gsettings --with-native-compilation --prefix=$HOME/.local
 # make
 make NATIVE_FULL_AOT=1 -j 8
 # install
