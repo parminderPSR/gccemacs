@@ -26,3 +26,37 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 10
 make NATIVE_FULL_AOT=1 -j 8
 # install
 make install 
+
+
+# for mysy2 
+target=$HOME/.local
+export PATH=/mingw64/bin:$PATH
+ 
+mkdir build; cd build
+
+(cd ../emacs; ./autogen.sh)
+
+export PKG_CONFIG_PATH=/mingw64/lib/pkgconfig
+
+../emacs/configure \
+    --host=x86_64-w64-mingw32 \
+    --target=x86_64-w64-mingw32 \
+    --build=x86_64-w64-mingw32 \
+    --with-native-compilation \
+    --with-gnutls \
+    --with-imagemagick \
+    --with-jpeg \
+    --with-json \
+    --with-png \
+    --with-rsvg \
+    --with-tiff \
+    --with-wide-int \
+    --with-xft \
+    --with-xml2 \
+    --with-xpm \
+    'CFLAGS=-I/mingw64/include/noX' \
+    prefix=$target
+ 
+make
+ 
+make install prefix=$target
