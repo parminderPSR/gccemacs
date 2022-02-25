@@ -30,13 +30,14 @@ make install
 
 # for mysy2 
 target=$HOME/.local
-export PATH=/mingw64/bin:$PATH
+
+export PATH=/c/msys64/mingw64/bin:$PATH
  
 mkdir build; cd build
 
 (cd ../emacs; ./autogen.sh)
 
-export PKG_CONFIG_PATH=/mingw64/lib/pkgconfig
+export PKG_CONFIG_PATH=C:/msys64/mingw64/lib/pkgconfig 
 
 ../emacs/configure \
     --host=x86_64-w64-mingw32 \
@@ -60,3 +61,5 @@ export PKG_CONFIG_PATH=/mingw64/lib/pkgconfig
 make
  
 make install prefix=$target
+# Only needed for standalone dist (wo MSYS2 env)
+# cp /mingw64/bin/*.dll $target
