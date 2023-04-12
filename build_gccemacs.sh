@@ -8,7 +8,7 @@ git reset --hard origin/feature/native-comp
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt install -y autoconf make checkinstall texinfo libxpm-dev libjpeg-dev \
      libgif-dev libtiff-dev libpng-dev libgnutls28-dev libncurses5-dev \
-     libjansson-dev libharfbuzz-dev libgccjit-10-dev gcc-10 g++-10
+     libjansson-dev libharfbuzz-dev libgccjit-11-dev gcc-11 g++-11 libgtk-3-dev
 sudo apt update
 sudo apt -y upgrade
 
